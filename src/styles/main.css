@@ -16,8 +16,8 @@ p{
 a{
     text-decoration: none;
 }
-/* HEADER */
-header{
+/* NAV */
+nav{
     position: fixed;
     top: 0;
     left: 0;
@@ -29,7 +29,7 @@ header{
     align-items: center;
     transition: 0.5s;
 }
-header.sticky{
+nav.sticky{
     background: #fff;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
@@ -42,7 +42,7 @@ header.sticky{
 .logo span{
     color: rgb(238, 204, 9);
 }
-header.sticky .logo{
+nav.sticky .logo{
     color: #000;
 }
 /* MAIN MENU */
@@ -63,7 +63,7 @@ nav ul li .active,
 nav ul li a:hover{
     border-bottom: 2px solid rgb(238,204,9);
 }
-header.sticky nav ul li a{
+nav.sticky ul li a{
     color: #000;    
 }
 /* HERO */
@@ -243,6 +243,72 @@ footer .copyright{
     font-size: 1em;
     cursor:pointer;
 }
+/* DETAIL */
+.detail img{
+    width:100%;
+}
+.detail-title{
+    font-size: 2em;
+    color:rgb(167, 138, 11);
+}
+.page-title{
+    font-weight: 400;
+    font-size:2em;
+    margin-top:80px;
+    margin-bottom:10px;
+}
+.title{
+    font-weight: bold;
+    padding: 20px 0;
+}
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+}
+.detail-menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.menu {
+    width: 100%;
+    padding: 0 20px 20px 20px;
+}
+.menu h4 {
+    padding-bottom: 10px;
+}
+.btn-like {
+    font-size: 1.5em;
+    background-color: transparent;
+    color: rgb(77, 75, 75);
+    border: 0;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+.btn-like .fas {
+    color: #ff0000;
+}
+
+.review {
+    margin: 10px;
+    border: 1px solid rgb(190, 190, 190);
+    padding:5px 20px;
+    line-height: 1.5em;
+}
+.review-person {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.review-date {
+    padding-left: 10px;
+    font-size: 0.75em;
+    color: #333;
+}
+.review-text {
+    color: #333;
+    font-size: 0.8em;
+}
 
 /* RESPONSIVE */
 @media screen and (max-width: 768px){
@@ -258,7 +324,7 @@ footer .copyright{
         color: #fff;
         font-size: 1.5em;
     }
-    header.sticky .menu-toggle{
+    nav.sticky .menu-toggle{
         color: #000;
     }
     nav.collapse ul{
@@ -285,9 +351,12 @@ footer .copyright{
     .hero-content h1{
         font-size: 2.5em;
     }
+    .menu{
+        width: 50%;
+    }
 }
 @media screen and (min-width:769px){
-    header{
+    nav{
         padding:10px 60px;
     }
     .menu-toggle{
@@ -296,12 +365,13 @@ footer .copyright{
     .card{
         width: 40%;
     }
+   
     .subscription{
         padding: 20px 60px;
     }
 }
 @media screen and (min-width:900px){
-    header{
+    nav{
         padding: 10px 100px;
     }
     .hero-content h1{
