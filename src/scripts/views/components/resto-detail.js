@@ -7,7 +7,6 @@ class RestoDetail extends HTMLElement {
   }
 
   render() {
-    console.log(this.restaurantItem.menus.foods);
     this.innerHTML = `
       <img src="${CONFIG.BASE_IMAGE_URL('medium', this.restaurantItem.pictureId)}" alt="Restaurant ${this.restaurantItem.name}">
       <div class="detail-header">

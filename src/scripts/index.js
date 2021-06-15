@@ -17,8 +17,8 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
-  swRegister();
-  webSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
+  // swRegister();
+  // webSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
 });
 
 // sticky header/navbar

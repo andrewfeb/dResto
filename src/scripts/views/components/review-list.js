@@ -7,7 +7,7 @@ class ReviewList extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = '<h3 class="title">Customer Reviews</h3>';
+    this.innerHTML = '';
     this.reviewList.forEach((review) => {
       const reviewItem = document.createElement('review-item');
       reviewItem.review = review;
