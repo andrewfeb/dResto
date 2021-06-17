@@ -1,11 +1,13 @@
+import '../components/app-bar';
+import '../components/hero';
 import '../components/resto-list';
-import RestaurantsDbSource from '../../data/restaurantsdb-source';
+import RestaurantsDB from '../../data/restaurantsdb-source';
 
 const home = {
   async render() {
     return `
       <hero-component class="hero"></hero-component>
-      <section>
+      <section id="list">
         <div class="list-title">
             <h2>List Restaurant</h2>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
@@ -23,7 +25,7 @@ const home = {
   },
 
   async afterRender() {
-    const restaurants = await RestaurantsDbSource.listRestaurants();
+    const restaurants = await RestaurantsDB.getAll();
     const restaurantsContainer = document.querySelector('resto-list');
     restaurantsContainer.restaurants = restaurants;
   },

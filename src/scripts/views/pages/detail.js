@@ -1,10 +1,9 @@
 import '../components/resto-detail';
 import '../components/review-list';
 import '../components/review-form';
-import RestaurantsDbSource from '../../data/restaurantsdb-source';
+import RestaurantsDB from '../../data/restaurantsdb-source';
 import urlParser from '../../routes/url-parser';
 import likeButtonInitiator from '../../utils/like-button-initiator';
-import addReview from '../../utils/add-review';
 
 const detail = {
   async render() {
@@ -22,11 +21,10 @@ const detail = {
 
   async afterRender() {
     const url = urlParser.parseActiveUrlWithoutCombiner();
-    const data = await RestaurantsDbSource.detailRestaurant(url.id);
+    let data = await RestaurantsDB.get(url.id);
     const restaurantContainer = document.querySelector('resto-detail');
     const customerReviews = document.querySelector('customer-reviews');
     const btnSend = document.querySelector('#btn-send');
-    console.log(data.customerReviews);
     restaurantContainer.restaurant = data;
     customerReviews.reviews = data.customerReviews;
 
@@ -34,17 +32,22 @@ const detail = {
       restaurant: data,
     });
 
-    btnSend.addEventListener('click', (event) => {
+    btnSend.addEventListener('click', async (event) => {
       event.preventDefault();
       const name = document.querySelector('input[name="name"]');
       const review = document.querySelector('textarea[name="review"]');
       if (name.value === '' || review.value === '') {
         alert('Inputan tidak boleh kosong');
       } else {
-        addReview(url.id, name.value, review.value);
-        const data1 = RestaurantsDbSource.detailRestaurant(url.id);
-        console.log(data1);
-        // customerReviews.reviews = data1.customerReviews;
+        await RestaurantsDB.create({
+          id: url.id,
+          name: name.value,
+          review: review.value,
+        });
+        data = await RestaurantsDB.get(url.id);
+        name.value = '';
+        review.value = '';
+        customerReviews.reviews = data.customerReviews;
       }
     });
   },

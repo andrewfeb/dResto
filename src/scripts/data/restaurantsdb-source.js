@@ -1,22 +1,22 @@
 import API from '../globals/api';
 import CONFIG from '../globals/config';
 
-class RestaurantsDbSource {
-  static async listRestaurants() {
+class RestaurantsDB {
+  static async getAll() {
     const response = await fetch(API.LIST);
     const responseJson = await response.json();
 
     return responseJson.restaurants;
   }
 
-  static async detailRestaurant(id) {
+  static async get(id) {
     const response = await fetch(API.DETAIL(id));
     const responseJson = await response.json();
 
     return responseJson.restaurant;
   }
 
-  static async addReview(data) {
+  static async create(data) {
     const response = await fetch(API.ADD_REVIEW, {
       method: 'POST',
       headers: {
@@ -30,4 +30,4 @@ class RestaurantsDbSource {
   }
 }
 
-export default RestaurantsDbSource;
+export default RestaurantsDB;

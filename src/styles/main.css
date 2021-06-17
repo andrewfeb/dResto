@@ -46,24 +46,24 @@ nav.sticky .logo{
     color: #000;
 }
 /* MAIN MENU */
-nav ul{
+.navbar{
     position: relative;
     display: flex;
 }
-nav ul li {
+.navbar li {
     list-style: none;
     margin-left: 30px;
 }
-nav ul li a{
+.navbar li a{
     text-decoration: none;
     color: #fff;
     padding: 11px;
 }
-nav ul li .active,
-nav ul li a:hover{
+.navbar li .active,
+.navbar li a:hover{
     border-bottom: 2px solid rgb(238,204,9);
 }
-nav.sticky ul li a{
+nav.sticky .navbar li a{
     color: #000;    
 }
 /* HERO */
@@ -310,9 +310,30 @@ footer .copyright{
     font-size: 0.8em;
 }
 
+/* LOADER */
+#loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+.loader {
+    border: 10px solid #f3f3f3; /* Light grey */
+    border-top: 10px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /* RESPONSIVE */
 @media screen and (max-width: 768px){
-    nav ul {
+    .navbar {
         display: none;
     }
     .menu-toggle{
@@ -327,7 +348,7 @@ footer .copyright{
     nav.sticky .menu-toggle{
         color: #000;
     }
-    nav.collapse ul{
+    .navbar.collapse{
         width:100%;
         height: calc(100% - 68px);
         top:68px;
@@ -340,10 +361,10 @@ footer .copyright{
         flex-direction: column;
         background-color: #fff;
     }
-    nav.collapse ul li{
+    .navbar.collapse li{
         padding:15px 0;
     }
-    nav.collapse ul li a{
+    .navbar.collapse li a{
         color: #000111;    
     }   
 }

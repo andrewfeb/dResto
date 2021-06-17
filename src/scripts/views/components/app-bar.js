@@ -10,10 +10,10 @@ class AppBar extends HTMLElement {
         <button type="button" class="menu-toggle" aria-label="Menu Toggle">
           <i class="fas fa-bars"></i>
         </button>
-        <ul>
-          <li><a class="active" href="#/">HOME</a></li>
-          <li><a href="#/favorite">FAVORITE</a></li>
-          <li><a href="https://github.com/andrewfeb" target="_blank" rel="noreferrer">ABOUT</a></li>
+        <ul class="navbar">
+          <li><a class="nav-link active" href="#/">HOME</a></li>
+          <li><a class="nav-link" href="#/favorite">FAVORITE</a></li>
+          <li><a class="nav-link" href="https://github.com/andrewfeb" target="_blank" rel="noreferrer">ABOUT</a></li>
         </ul>
       </nav>`;
   }

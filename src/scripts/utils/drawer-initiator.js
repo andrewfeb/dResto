@@ -17,6 +17,12 @@ const drawerInitiator = {
       }
     });
 
+    drawer.addEventListener('click', (event) => {
+      if (event.target.className === 'nav-link') {
+        this.closeDrawer(event, drawer);
+      }
+    });
+
     content.addEventListener('click', (event) => {
       this.closeDrawer(event, drawer);
     });
@@ -30,6 +36,11 @@ const drawerInitiator = {
   closeDrawer(event, drawer) {
     event.stopPropagation();
     drawer.classList.remove('collapse');
+    const icon = document.querySelector('.fas');
+    if (icon.classList.contains('fa-times')) {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
   },
 
 };

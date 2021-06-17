@@ -8,7 +8,7 @@ class Hero extends HTMLElement {
       <div class="hero-content">
           <h1>Discover a Culinary Spot</h1>
           <p>We will help you discover a restaurant you like</p>
-          <a href="#" class="btn btn-gold">Our List</a>
+          <a href="#list" class="btn btn-gold">Our List</a>
       </div>`;
   }
 }
