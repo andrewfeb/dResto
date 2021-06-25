@@ -29,6 +29,7 @@ const detail = {
     customerReviews.reviews = data.customerReviews;
 
     likeButtonInitiator.init({
+      likeButton: document.querySelector('.btn-like'),
       restaurant: data,
     });
 

@@ -11,7 +11,7 @@ class RestoDetail extends HTMLElement {
       <img src="${CONFIG.BASE_IMAGE_URL('medium', this.restaurantItem.pictureId)}" alt="Restaurant ${this.restaurantItem.name}">
       <div class="detail-header">
         <h2 class="detail-title">${this.restaurantItem.name}</h2>
-        <button aria-label="like this restaurant" class="btn-like">
+        <button aria-label="Like this restaurant" class="btn-like">
           <i class="far fa-heart"></i>
         </button>
       </div>
