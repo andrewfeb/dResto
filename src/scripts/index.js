@@ -46,7 +46,7 @@ window.addEventListener('load', () => {
     if (i > -1) {
       setTimeout(() => {
         window.scrollTo(0, i);
-        smoothScroll(i - 10);
+        smoothScroll(i - 50);
       }, 10);
     }
   };

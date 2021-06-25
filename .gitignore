@@ -1,2 +1,5 @@
-node_modules
-restaurant-apps.zip
+/node_modules
+restaurant-apps v1.zip
+restaurant-apps v2.zip
+/dist
+/restaurant-apps

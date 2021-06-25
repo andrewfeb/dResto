@@ -148,6 +148,7 @@ section{
 .card-title{
     font-size: 1.25em;
     color:rgb(167, 138, 11);
+    padding: 11px 0;
 }
 .card-body{
     padding:20px;
