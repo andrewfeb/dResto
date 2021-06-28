@@ -1,4 +1,4 @@
-import likeButtonInitiator from '../src/scripts/utils/like-button-initiator';
+import * as testFactories from './helpers/testFactories';
 import favoriteRestaurantIdb from '../src/scripts/data/favorite-restaurants-db';
 
 describe('Like a Restaurant', () => {
@@ -11,34 +11,19 @@ describe('Like a Restaurant', () => {
   });
 
   it('should show the like button when the restaurant has not been liked before', async () => {
-    await likeButtonInitiator.init({
-      likeButton: document.querySelector('.btn-like'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await testFactories.createLikeButton({ id: 1 });
 
     expect(document.querySelector('[aria-label="Like this restaurant"]')).toBeTruthy();
   });
 
   it('should not show the unlike button when the restaurant has not been liked before', async () => {
-    await likeButtonInitiator.init({
-      likeButton: document.querySelector('.btn-like'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await testFactories.createLikeButton({ id: 1 });
 
     expect(document.querySelector('[aria-label="Unlike this restaurant"]')).toBeFalsy();
   });
 
   it('should be able to like the restaurant', async () => {
-    await likeButtonInitiator.init({
-      likeButton: document.querySelector('.btn-like'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await testFactories.createLikeButton({ id: 1 });
 
     document.querySelector('.btn-like').dispatchEvent(new Event('click'));
     const restaurant = await favoriteRestaurantIdb.get(1);
@@ -49,12 +34,7 @@ describe('Like a Restaurant', () => {
   });
 
   it('should not add a restaurant again when its already liked', async () => {
-    await likeButtonInitiator.init({
-      likeButton: document.querySelector('.btn-like'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await testFactories.createLikeButton({ id: 1 });
 
     await favoriteRestaurantIdb.put({ id: 1 });
     document.querySelector('.btn-like').dispatchEvent(new Event('click'));
@@ -65,10 +45,7 @@ describe('Like a Restaurant', () => {
   });
 
   it('should not add a restaurant when it has no id', async () => {
-    await likeButtonInitiator.init({
-      likeButton: document.querySelector('.btn-like'),
-      restaurant: {},
-    });
+    await testFactories.createLikeButton({});
 
     document.querySelector('.btn-like').dispatchEvent(new Event('click'));
 

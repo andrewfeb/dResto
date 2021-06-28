@@ -1,4 +1,4 @@
-import likeButtonInitiator from '../src/scripts/utils/like-button-initiator';
+import * as testFactories from './helpers/testFactories';
 import favoriteRestaurantIdb from '../src/scripts/data/favorite-restaurants-db';
 
 describe('Unliking a Restaurant', () => {
@@ -16,34 +16,19 @@ describe('Unliking a Restaurant', () => {
   });
 
   it('should display unlike widget when the restaurant has been liked', async () => {
-    await likeButtonInitiator.init({
-      likeButton: document.querySelector('.btn-like'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await testFactories.createLikeButton({ id: 1 });
 
     expect(document.querySelector('[aria-label="Unlike this restaurant"]')).toBeTruthy();
   });
 
   it('should not display like widget when the restaurant has been liked', async () => {
-    await likeButtonInitiator.init({
-      likeButton: document.querySelector('.btn-like'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await testFactories.createLikeButton({ id: 1 });
 
     expect(document.querySelector('[aria-label="Like this restaurant"]')).toBeFalsy();
   });
 
   it('should be able to remove liked restaurant from the list', async () => {
-    await likeButtonInitiator.init({
-      likeButton: document.querySelector('.btn-like'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await testFactories.createLikeButton({ id: 1 });
 
     document.querySelector('[aria-label="Unlike this restaurant"]').dispatchEvent(new Event('click'));
 
@@ -51,12 +36,7 @@ describe('Unliking a Restaurant', () => {
   });
 
   it('should not throw error if the unliked restaurant is not in the list', async () => {
-    await likeButtonInitiator.init({
-      likeButton: document.querySelector('.btn-like'),
-      restaurant: {
-        id: 1,
-      },
-    });
+    await testFactories.createLikeButton({ id: 1 });
 
     await favoriteRestaurantIdb.delete(1);
     document.querySelector('[aria-label="Unlike this restaurant"]').dispatchEvent(new Event('click'));
