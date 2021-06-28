@@ -1,10 +1,10 @@
-import favoriteRestaurantIdb from '../data/favorite-restaurants-db';
 import { createIconLikeButtonTemplate, createIconUnlikeButtonTemplate } from '../views/templates/template-creator';
 
 const likeButtonInitiator = {
-  async init({ likeButton, restaurant }) {
+  async init({ likeButton, favoriteRestaurants, restaurant }) {
     this.mLikeButton = likeButton;
     this.mRestaurant = restaurant;
+    this.mFavoriteRestaurants = favoriteRestaurants;
 
     await this.renderButton();
   },
@@ -19,7 +19,7 @@ const likeButtonInitiator = {
   },
 
   async isRestaurantExist(id) {
-    const restaurant = await favoriteRestaurantIdb.get(id);
+    const restaurant = await this.mFavoriteRestaurants.get(id);
     return !!restaurant;
   },
 
@@ -27,7 +27,7 @@ const likeButtonInitiator = {
     this.mLikeButton.setAttribute('aria-label', 'Like this restaurant');
     this.mLikeButton.innerHTML = createIconLikeButtonTemplate();
     this.mLikeButton.addEventListener('click', async () => {
-      await favoriteRestaurantIdb.put(this.mRestaurant);
+      await this.mFavoriteRestaurants.put(this.mRestaurant);
       this.renderButton();
     });
   },
@@ -36,7 +36,7 @@ const likeButtonInitiator = {
     this.mLikeButton.setAttribute('aria-label', 'Unlike this restaurant');
     this.mLikeButton.innerHTML = createIconUnlikeButtonTemplate();
     this.mLikeButton.addEventListener('click', async () => {
-      await favoriteRestaurantIdb.delete(this.mRestaurant.id);
+      await this.mFavoriteRestaurants.delete(this.mRestaurant.id);
       this.renderButton();
     });
   },

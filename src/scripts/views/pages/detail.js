@@ -4,6 +4,7 @@ import '../components/review-form';
 import RestaurantsDB from '../../data/restaurantsdb-source';
 import urlParser from '../../routes/url-parser';
 import likeButtonInitiator from '../../utils/like-button-initiator';
+import favoriteRestaurantIdb from '../../data/favorite-restaurants-db';
 
 const detail = {
   async render() {
@@ -30,6 +31,7 @@ const detail = {
 
     likeButtonInitiator.init({
       likeButton: document.querySelector('.btn-like'),
+      favoriteRestaurants: favoriteRestaurantIdb,
       restaurant: data,
     });
 
