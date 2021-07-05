@@ -71,7 +71,7 @@ nav.sticky .navbar li a{
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/heros/hero-image_2.jpg");
+    background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-xl.jpg");
     background-size: cover;
     display: flex;
     align-items: center;
@@ -337,6 +337,9 @@ footer .copyright{
     .navbar {
         display: none;
     }
+    .hero{
+        background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-small.jpg");
+    }
     .menu-toggle{
         width: 45px;
         height: 45px;
@@ -381,6 +384,9 @@ footer .copyright{
     nav{
         padding:10px 60px;
     }
+    .hero{
+        background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-large.jpg");
+    }
     .menu-toggle{
         display: none;
     }
@@ -395,6 +401,9 @@ footer .copyright{
 @media screen and (min-width:900px){
     nav{
         padding: 10px 100px;
+    }
+    .hero{
+        background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-xl.jpg");
     }
     .hero-content h1{
         font-size: 3em;
