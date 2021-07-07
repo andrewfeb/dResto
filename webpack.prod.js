@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -49,5 +50,6 @@ module.exports = merge(common, {
       generateStatsFile: true,
       statsOptions: { source: false }
     }),
+    new CleanWebpackPlugin(),
   ],
 });
