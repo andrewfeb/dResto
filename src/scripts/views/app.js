@@ -44,11 +44,13 @@ class App {
     this.resource = urlParser.parseActiveUrlWithoutCombiner().resource;
     this.mContent.innerHTML = await page.render();
 
+    await page.afterRender();
     loading.innerHTML = loader();
     main.style.display = 'none';
-    await page.afterRender();
-    loading.style.display = 'none';
-    main.style.display = 'block';
+    loading.remove();
+    main.style.display = 'block'; 
+    /*loading.style.display = 'none';
+    */
 
     // add active class in current menu
     const menus = document.querySelectorAll('.active');

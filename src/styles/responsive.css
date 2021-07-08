@@ -1,0 +1,93 @@
+/* RESPONSIVE */
+@media screen and (max-width: 768px){
+    .navbar {
+        display: none;
+    }
+    .hero{
+        background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-small.jpg");
+    }
+    .menu-toggle{
+        width: 45px;
+        height: 45px;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        color: #fff;
+        font-size: 1.5em;
+    }
+    nav.sticky .menu-toggle{
+        color: #000;
+    }
+    .navbar.collapse{
+        width:100%;
+        height: calc(100% - 68px);
+        top:68px;
+        left:0;
+        position:fixed;
+        display: flex;
+        padding-top: 70px;
+        justify-content:flex-start;
+        align-items: center;
+        flex-direction: column;
+        background-color: #fff;
+    }
+    .navbar.collapse li{
+        padding:15px 0;
+    }
+    .navbar.collapse li a{
+        color: #000111;    
+    }   
+}
+@media screen and (min-width:550px){
+    .hero-content h1{
+        font-size: 2.5em;
+    }
+    .menu{
+        width: 50%;
+    }
+}
+@media screen and (min-width:769px){
+    nav{
+        padding:10px 60px;
+    }
+    .hero{
+        background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-large.jpg");
+    }
+    .menu-toggle{
+        display: none;
+    }
+    .card{
+        width: 40%;
+    }
+   
+    .subscription{
+        padding: 20px 60px;
+    }
+}
+@media screen and (min-width:900px){
+    nav{
+        padding: 10px 100px;
+    }
+    .hero{
+        background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-xl.jpg");
+    }
+    .hero-content h1{
+        font-size: 3em;
+    }
+    .card{
+        width:25%;
+    }
+    .subscription{
+        padding: 20px 100px;
+    }
+}
+@media screen and (min-width: 1200px){
+    .card{
+        width:30%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    section{
+        padding: 0 100px;
+    }
+}
