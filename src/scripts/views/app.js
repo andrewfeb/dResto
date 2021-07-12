@@ -1,7 +1,7 @@
 import drawerInitiator from '../utils/drawer-initiator';
 import urlParser from '../routes/url-parser';
 import routes from '../routes/routes';
-import { loader } from './templates/template-creator';
+// import { loader } from './templates/template-creator';
 
 class App {
   constructor({
@@ -39,18 +39,16 @@ class App {
   async renderPage() {
     const url = urlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
-    const loading = document.querySelector('#loading');
-    const main = document.querySelector('#main-content');
+    // const loading = document.querySelector('#loading');
+    // const main = document.querySelector('#main-content');
     this.resource = urlParser.parseActiveUrlWithoutCombiner().resource;
     this.mContent.innerHTML = await page.render();
 
+    // loading.innerHTML = loader();
+    // main.style.display = 'none';
     await page.afterRender();
-    loading.innerHTML = loader();
-    main.style.display = 'none';
-    loading.remove();
-    main.style.display = 'block'; 
-    /*loading.style.display = 'none';
-    */
+    // loading.style.display = 'none';
+    // main.style.display = 'block';
 
     // add active class in current menu
     const menus = document.querySelectorAll('.active');

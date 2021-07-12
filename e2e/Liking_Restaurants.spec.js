@@ -28,7 +28,6 @@ Scenario('liking one restaurant', async ({ I }) => {
   // Menangkap nama restaurant pertama
   const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
-  
   // 5. Klik tombol like di halaman  detail
   I.seeElement('.btn-like');
   I.click('.btn-like');
@@ -61,7 +60,7 @@ Scenario('unliking one restaurant', async ({ I }) => {
   // 5. Klik tombol like restaurant
   I.seeElement('.btn-like');
   I.click('.btn-like');
-  
+
   // 6. Buka halaman favorite
   I.amOnPage('/#/favorite');
   // 7. Melihat list restaurant favorite dan menangkap nama restaurant tersebut

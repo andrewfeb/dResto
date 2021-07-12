@@ -4,7 +4,7 @@ import favoriteRestaurantIdb from '../../src/scripts/data/favorite-restaurants-d
 const createLikeButton = async (restaurant) => {
   await likeButtonInitiator.init({
     likeButton: document.querySelector('.btn-like'),
-    favoritesRestaurants: favoriteRestaurantIdb,
+    favoriteRestaurants: favoriteRestaurantIdb,
     restaurant,
   });
 };
