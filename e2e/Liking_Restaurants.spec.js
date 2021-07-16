@@ -107,5 +107,5 @@ Scenario('add customer review', async ({ I }) => {
   // 7. Melihat review yang telah dikirim dan bandingkan dengan review yang telah ditulis
   const lastReview = locate('.review-text').last();
   const lastReviewText = await I.grabTextFrom(lastReview);
-  assert.strictEqual(textReview, lastReviewText);  
+  assert.strictEqual(textReview, lastReviewText);
 });

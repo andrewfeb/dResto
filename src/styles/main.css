@@ -344,7 +344,7 @@ footer .copyright{
         display: none;
     }
     .hero{
-        background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-small.jpg");
+        background-image: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-small.jpg");
     }
     .menu-toggle{
         width: 45px;
@@ -391,7 +391,7 @@ footer .copyright{
         padding:10px 60px;
     }
     .hero{
-        background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-large.jpg");
+        background-image: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-large.jpg");
     }
     .menu-toggle{
         display: none;
@@ -409,7 +409,7 @@ footer .copyright{
         padding: 10px 100px;
     }
     .hero{
-        background: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-xl.jpg");
+        background-image: linear-gradient(360deg, rgba(31, 30, 30, 0.6), rgba(72, 71, 71, 0.28)), url("/images/hero-xl.jpg");
     }
     .hero-content h1{
         font-size: 3em;
